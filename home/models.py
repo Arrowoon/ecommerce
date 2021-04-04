@@ -13,6 +13,8 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    def get_cat_url(self):
+        return reverse("home:category",kwargs={'slug':self.slug})
 
 class Slider(models.Model):
     name = models.CharField(max_length=300)
@@ -50,6 +52,8 @@ class Item(models.Model):
     slug = models.CharField(max_length=200,unique=True)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE,null=True)
+    description = models.TextField(blank=True)
+    specification = models.TextField(blank=True)
 
     def __str__(self):
         return self.title

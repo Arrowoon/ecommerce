@@ -40,6 +40,11 @@ class ItemDetailView(BaseView):
         cat = Item.objects.get(slug = slug).category_id
         self.views['catitems'] = Item.objects.filter(category=cat)
         return render(request,'product-detail.html',self.views)
+class CategoryView(BaseView):
+    def get(self,request,slug):
+        cat_id = Category.objects.get(slug = slug).id
+        self.views['catdetail'] = Item.objects.filter(slug = slug)
+        return render(request, 'product-list.html', self.views)
 
 
 

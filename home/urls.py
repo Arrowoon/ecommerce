@@ -5,4 +5,5 @@ app_name = 'home'
 urlpatterns = [
     path('',HomeView.as_view(),name='home'),
     path('products/<slug>',ItemDetailView.as_view(),name='products'),
+    path('category/<slug>',CategoryView.as_view(),name='category'),
 ]
