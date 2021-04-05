@@ -48,4 +48,11 @@ class CategoryView(BaseView):
 
 
 
-
+class SearchView(BaseView):
+    def get(self,request):
+        # query = request.GET.get('search',None)
+        if request.method == 'GET':
+            query = request.GET['search']
+            self.views['search_product'] = Item.objects.filter(title__icontains=query)
+            return render(request,'search.html',self.views)
+        return render(request,'search.html')

@@ -59,3 +59,12 @@ class Item(models.Model):
         return self.title
     def get_item_url(self):
         return reverse("home:products",kwargs={'slug':self.slug})
+
+class Contact(models.Model):
+    name = models.CharField(max_length=300)
+    email = models.EmailField(max_length=200, blank=True)
+    subject = models.TextField(blank=True)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name

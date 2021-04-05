@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
-
+       {% extends 'base.html' %}
+       {% load static %}
+       {% block content %}
         <!-- Breadcrumb Start -->
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
@@ -13,7 +12,7 @@
             </div>
         </div>
         <!-- Breadcrumb End -->
-        
+
         <!-- Product List Start -->
         <div class="product-view">
             <div class="container-fluid">
@@ -63,9 +62,9 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="col-md-4">
-                                {% for cat in categories %}
+                                {% for cat in search_product %}
                                 <div class="product-item">
                                     <div class="product-title">
                                         <a href="{{cat.get_item_url}}">{{cat.title}}</a>
@@ -323,7 +322,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <!-- Pagination Start -->
                         <div class="col-md-12">
                             <nav aria-label="Page navigation example">
@@ -341,8 +340,8 @@
                             </nav>
                         </div>
                         <!-- Pagination Start -->
-                    </div>           
-                    
+                    </div>
+
                     <!-- Side Bar Start -->
                     <div class="col-lg-4 sidebar">
                         <div class="sidebar-widget category">
@@ -367,7 +366,7 @@
                                 </ul>
                             </nav>
                         </div>
-                        
+
                         <div class="sidebar-widget widget-slider">
                             <div class="sidebar-slider normal-slider">
                                 <div class="product-item">
@@ -450,7 +449,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="sidebar-widget brands">
                             <h2 class="title">Our Brands</h2>
                             <ul>
@@ -462,7 +461,7 @@
                                 <li><a href="#">Sagittis</a><span>(28)</span></li>
                             </ul>
                         </div>
-                        
+
                         <div class="sidebar-widget tag">
                             <h2 class="title">Tags Cloud</h2>
                             <a href="#">Lorem ipsum</a>
@@ -483,8 +482,8 @@
                 </div>
             </div>
         </div>
-        <!-- Product List End -->  
-        
+        <!-- Product List End -->
+
         <!-- Brand Start -->
         <div class="brand">
             <div class="container-fluid">
@@ -499,5 +498,4 @@
             </div>
         </div>
         <!-- Brand End -->
-        
-     {% endblock %}
+        {% endblock %}
