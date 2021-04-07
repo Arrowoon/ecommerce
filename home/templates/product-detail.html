@@ -1,7 +1,6 @@
-     {% extends 'base.html' %}
-     {% load static %}
-     {% block content %}
-        
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
         <!-- Breadcrumb Start -->
         <div class="breadcrumb-wrap">
             <div class="container-fluid">
@@ -13,7 +12,7 @@
             </div>
         </div>
         <!-- Breadcrumb End -->
-        
+
         <!-- Product Detail Start -->
         <div class="product-detail">
             <div class="container-fluid">
@@ -24,6 +23,7 @@
                             <div class="row align-items-center">
                                 <div class="col-md-5">
                                     <div class="product-slider-single normal-slider">
+
                                         <img src="{{product.image.url}}" alt="Product Image">
 
                                     </div>
@@ -66,7 +66,7 @@
                                                 <button type="button" class="btn">M</button>
                                                 <button type="button" class="btn">L</button>
                                                 <button type="button" class="btn">XL</button>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="p-color">
                                             <h4>Color:</h4>
@@ -74,7 +74,7 @@
                                                 <button type="button" class="btn">White</button>
                                                 <button type="button" class="btn">Black</button>
                                                 <button type="button" class="btn">Blue</button>
-                                            </div> 
+                                            </div>
                                         </div>
                                         <div class="action">
                                             <a class="btn" href="#"><i class="fa fa-shopping-cart"></i>Add to Cart</a>
@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="row product-detail-bottom">
                             <div class="col-lg-12">
                                 <ul class="nav nav-pills nav-justified">
@@ -103,13 +103,13 @@
                                     <div id="description" class="container tab-pane active">
                                         <h4>Product description</h4>
                                         <p>
-                                            {{product.description}}
+                                                    {{ product.description }}
                                         </p>
                                     </div>
                                     <div id="specification" class="container tab-pane fade">
                                         <h4>Product specification</h4>
                                         <ul>
-                                           {{product.specification}}
+                                            {{product.specification}}
                                         </ul>
                                     </div>
                                     <div id="reviews" class="container tab-pane fade">
@@ -155,7 +155,6 @@
                             </div>
                         </div>
                         {% endfor %}
-                        
                         <div class="product">
                             <div class="section-header">
                                 <h1>Related Products</h1>
@@ -177,7 +176,7 @@
                                         </div>
                                         <div class="product-image">
                                             <a href="product-detail.html">
-                                                <img src="{{cat.image.url}}" alt="Product Image">
+                                                <img src="{{cat.image.url}}" style="height:300px" alt="Product Image">
                                             </a>
                                             <div class="product-action">
                                                 <a href="#"><i class="fa fa-cart-plus"></i></a>
@@ -196,10 +195,10 @@
                                     </div>
                                 </div>
                                 {% endfor %}
-
+                            </div>
                         </div>
                     </div>
-                    
+
                     <!-- Side Bar Start -->
                     <div class="col-lg-4 sidebar">
                         <div class="sidebar-widget category">
@@ -208,14 +207,13 @@
                                 <ul class="navbar-nav">
                                     {% for cat in cat_count %}
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#"><i class="fa fa-{{cat.image}}"></i>{{cat.name}} {{cat.cat_count}}</a>
+                                        <a class="nav-link" href="#"><i class="fa fa-{{cat.image}}"></i>{{cat.name}}  {{cat.cat_count}}</a>
                                     </li>
                                     {% endfor %}
-
                                 </ul>
                             </nav>
                         </div>
-                        
+
                         <div class="sidebar-widget widget-slider">
                             <div class="sidebar-slider normal-slider">
                                 <div class="product-item">
@@ -298,16 +296,16 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="sidebar-widget brands">
                             <h2 class="title">Our Brands</h2>
                             <ul>
-                                {% for brand in count %}
-                                <li><a href="#">{{brand.count}}</a><span>(45)</span></li>
+                                {% for brand in brands %}
+                                <li><a href="#">{{brand.name}} </a><span>(45)</span></li>
                                 {% endfor %}
                             </ul>
                         </div>
-                        
+
                         <div class="sidebar-widget tag">
                             <h2 class="title">Tags Cloud</h2>
                             <a href="#">Lorem ipsum</a>
@@ -329,7 +327,7 @@
             </div>
         </div>
         <!-- Product Detail End -->
-        
+
         <!-- Brand Start -->
         <div class="brand">
             <div class="container-fluid">
@@ -344,4 +342,4 @@
             </div>
         </div>
         <!-- Brand End -->
-    {% endblock %}
+       {% endblock %}
